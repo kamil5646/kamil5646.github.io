@@ -1,47 +1,618 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-adsense-account" content="ca-pub-3602841906587206" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3602841906587206"
-      crossorigin="anonymous"
-    ></script>
-    <title>kamil5646.github.io</title>
-    <meta http-equiv="refresh" content="0; url=https://kamil5646.github.io/MadCAD2D/" />
-    <style>
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        background: #0e1726;
-        color: #e7f0ff;
-        font-family: "Segoe UI", Arial, sans-serif;
-      }
-      .box {
-        width: min(720px, calc(100vw - 32px));
-        border: 1px solid rgba(155, 188, 232, 0.35);
-        border-radius: 12px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.04);
-      }
-      a { color: #8ec6ff; }
-    </style>
-  </head>
-  <body>
-    <div class="box">
-      <h1>kamil5646.github.io</h1>
-      <p>Trwa przekierowanie do strony projektu MadCAD 2D...</p>
-      <p>
-        Jeśli nic się nie dzieje, kliknij:
-        <a href="https://kamil5646.github.io/MadCAD2D/">https://kamil5646.github.io/MadCAD2D/</a>
-      </p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio Kamila — aplikacje desktopowe i mobilne, narzędzia CAD, automatyka oraz projekty open source.">
+  <meta name="theme-color" content="#07110f">
+  <meta property="og:title" content="Kamil — Developer">
+  <meta property="og:description" content="Tworzę użyteczne aplikacje, narzędzia i projekty open source.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/143969553?v=4">
+  <title>Kamil — Developer</title>
+  <style>
+    :root {
+      --bg: #07110f;
+      --bg-soft: #0b1916;
+      --panel: rgba(15, 34, 29, .72);
+      --panel-solid: #0f221d;
+      --line: rgba(118, 255, 205, .14);
+      --text: #edfdf7;
+      --muted: #91a9a0;
+      --accent: #62f6bd;
+      --accent-2: #70a7ff;
+      --shadow: 0 28px 80px rgba(0, 0, 0, .34);
+      --radius: 24px;
+      color-scheme: dark;
+    }
+
+    :root.light {
+      --bg: #f2f8f5;
+      --bg-soft: #e7f2ed;
+      --panel: rgba(255, 255, 255, .78);
+      --panel-solid: #fff;
+      --line: rgba(4, 72, 49, .13);
+      --text: #10201a;
+      --muted: #5a7168;
+      --accent: #087f5b;
+      --accent-2: #2457c5;
+      --shadow: 0 28px 70px rgba(16, 65, 47, .12);
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 75% 5%, color-mix(in srgb, var(--accent-2) 15%, transparent), transparent 34rem),
+        radial-gradient(circle at 5% 35%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .34;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    ::selection { background: var(--accent); color: #04100c; }
+
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .skip {
+      position: fixed;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: #04100c;
+      border-radius: 10px;
+      font-weight: 800;
+    }
+    .skip:focus { top: 16px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid transparent;
+      transition: .25s ease;
+    }
+    nav.scrolled {
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      border-color: var(--line);
+    }
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 850;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: var(--panel);
+      color: var(--accent);
+      box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 10%, transparent);
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a {
+      color: var(--muted);
+      font-size: .93rem;
+      font-weight: 650;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--panel);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 56px;
+      padding: 84px 0 96px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font: 700 .82rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 10px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .96;
+      letter-spacing: -.075em;
+    }
+    h1 span {
+      color: transparent;
+      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .lead {
+      max-width: 700px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 780;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
+    .btn.primary { background: var(--accent); color: #04100c; border-color: transparent; }
+    .btn svg { width: 19px; height: 19px; }
+
+    .terminal {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: rotate(1.5deg);
+    }
+    .terminal::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(110deg, transparent 30%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 70%);
+    }
+    .terminal-bar {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 17px;
+      border-bottom: 1px solid var(--line);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: #ff6b6b; }
+    .dot:nth-child(2) { background: #ffd43b; }
+    .dot:nth-child(3) { background: #51cf66; }
+    .terminal-title { margin-left: auto; color: var(--muted); font: 600 .72rem ui-monospace, monospace; }
+    pre {
+      min-height: 330px;
+      margin: 0;
+      padding: 30px 24px;
+      color: var(--muted);
+      font: 500 clamp(.78rem, 1.3vw, .92rem)/1.85 ui-monospace, SFMono-Regular, Menlo, monospace;
+      white-space: pre-wrap;
+    }
+    .code-key { color: var(--accent-2); }
+    .code-value { color: var(--accent); }
+    .code-comment { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+
+    section { padding: 110px 0; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font: 750 .79rem ui-monospace, monospace;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.04; letter-spacing: -.055em; }
+    .section-copy { max-width: 500px; margin: 0; color: var(--muted); }
+
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+    .project {
+      position: relative;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .project:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent) 42%, transparent); }
+    .project::before {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--project-color, var(--accent)) 13%, transparent);
+      filter: blur(8px);
+    }
+    .project-num {
+      color: var(--muted);
+      font: 700 .77rem ui-monospace, monospace;
+      letter-spacing: .08em;
+    }
+    .project h3 { margin: 42px 0 12px; font-size: 1.75rem; letter-spacing: -.035em; }
+    .project p { max-width: 520px; margin: 0; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 30px; }
+    .tag {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: color-mix(in srgb, var(--bg) 38%, transparent);
+      font-size: .76rem;
+      font-weight: 700;
+    }
+    .project-link {
+      position: absolute;
+      right: 26px;
+      top: 24px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--text);
+      transition: background .2s ease, color .2s ease;
+    }
+    .project:hover .project-link { background: var(--accent); color: #04100c; }
+    .project-link svg { width: 18px; height: 18px; }
+
+    .stack-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
+    .about-card, .stack-card {
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+    }
+    .profile-row { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
+    .avatar {
+      width: 74px;
+      height: 74px;
+      border: 2px solid color-mix(in srgb, var(--accent) 38%, transparent);
+      border-radius: 23px;
+      object-fit: cover;
+    }
+    .profile-row strong { display: block; font-size: 1.15rem; }
+    .profile-row span { color: var(--muted); font-size: .9rem; }
+    .about-card p { color: var(--muted); }
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .skill {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--bg) 35%, transparent);
+    }
+    .skill strong { display: block; margin-bottom: 4px; }
+    .skill span { color: var(--muted); font-size: .85rem; }
+
+    .contact {
+      padding: 72px 32px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 45%),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .contact h2 { max-width: 760px; margin: 0 auto; }
+    .contact p { max-width: 590px; margin: 20px auto 30px; color: var(--muted); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 38px 0 48px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer a:hover { color: var(--text); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 70px; }
+      .terminal { width: min(620px, 100%); transform: none; }
+      .projects, .stack-grid { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .nav-links a { display: none; }
+      .nav-links { gap: 8px; }
+      .hero { padding: 58px 0 70px; gap: 44px; }
+      h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+      section { padding: 78px 0; }
+      .projects { grid-template-columns: 1fr; }
+      .project { min-height: 300px; padding: 25px; }
+      .skills { grid-template-columns: 1fr; }
+      .about-card, .stack-card { padding: 25px; }
+      .contact { padding: 58px 22px; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Strona główna">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span>Kamil<span style="color:var(--accent)">.dev</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#projekty">Projekty</a>
+        <a href="#o-mnie">O mnie</a>
+        <a href="https://github.com/kamil5646" target="_blank" rel="noreferrer">GitHub</a>
+        <button class="theme-toggle" id="theme" aria-label="Zmień motyw" title="Zmień motyw">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.5A7 7 0 0 1 12 3Z"/>
+          </svg>
+        </button>
+      </div>
     </div>
-    <script>
-      window.location.replace("https://kamil5646.github.io/MadCAD2D/");
-    </script>
-  </body>
+  </nav>
+
+  <main id="main">
+    <header class="wrap hero" id="top">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> Developer &amp; maker</div>
+        <h1>Buduję rzeczy, które <span>działają.</span></h1>
+        <p class="lead">
+          Tworzę aplikacje desktopowe i mobilne, narzędzia dla branży technicznej,
+          automatykę oraz projekty open source — od pomysłu po gotowy build.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projekty">
+            Zobacz projekty
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+          <a class="btn" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="terminal" aria-label="Profil dewelopera">
+        <div class="terminal-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="terminal-title">~/kamil/profile.ts</span>
+        </div>
+        <pre><span class="code-key">const</span> developer = {
+  name: <span class="code-value">"Kamil"</span>,
+  focus: [
+    <span class="code-value">"desktop & mobile"</span>,
+    <span class="code-value">"CAD & automation"</span>,
+    <span class="code-value">"Android & open source"</span>
+  ],
+  stack: [
+    <span class="code-value">"SwiftUI"</span>, <span class="code-value">"Flutter"</span>,
+    <span class="code-value">"Electron"</span>, <span class="code-value">"Python"</span>
+  ],
+  approach: <span class="code-value">"build → test → ship"</span>
+};
+
+<span class="code-comment">// pomysł zamieniam w działający produkt</span></pre>
+      </div>
+    </header>
+
+    <section id="projekty">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">01 / Wybrane realizacje</p>
+            <h2>Projekty</h2>
+          </div>
+          <p class="section-copy">Narzędzia tworzone wokół prawdziwych potrzeb — od optymalizacji materiału po techniczne projektowanie 2D i rozwój Androida.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal" style="--project-color:#62f6bd">
+            <span class="project-num">01 — DESKTOP / CAD</span>
+            <a class="project-link" href="https://kamil5646.github.io/MadCAD2D/" target="_blank" rel="noreferrer" aria-label="Otwórz stronę MadCAD 2D">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <h3>MadCAD 2D</h3>
+            <p>Aplikacja CAD do szybkiego projektowania konstrukcji stalowych. Rysowanie, wymiarowanie, warstwy oraz eksport do DXF, SVG i PDF.</p>
+            <div class="tags"><span class="tag">Electron</span><span class="tag">JavaScript</span><span class="tag">CAD</span><span class="tag">Windows / macOS</span></div>
+          </article>
+
+          <article class="project reveal" style="--project-color:#70a7ff">
+            <span class="project-num">02 — MOBILE / DESKTOP</span>
+            <a class="project-link" href="https://github.com/kamil5646/MadCalc" target="_blank" rel="noreferrer" aria-label="Otwórz repozytorium MadCalc">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <h3>MadCalc</h3>
+            <p>Lokalny kalkulator optymalizacji cięcia sztang z raportami PDF. Natywna aplikacja iOS oraz wersja wieloplatformowa.</p>
+            <div class="tags"><span class="tag">SwiftUI</span><span class="tag">Flutter</span><span class="tag">iOS</span><span class="tag">Android / Desktop</span></div>
+          </article>
+
+          <article class="project reveal" style="--project-color:#ff9f43">
+            <span class="project-num">03 — ANDROID</span>
+            <a class="project-link" href="https://github.com/kamil5646/lineage_a32_manifest" target="_blank" rel="noreferrer" aria-label="Otwórz projekt LineageOS dla Galaxy A32">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <h3>LineageOS — Galaxy A32</h3>
+            <p>Uporządkowany, powtarzalny bring-up LineageOS 22.2 dla Samsunga Galaxy A32 4G: device tree, vendor, kernel i manifest.</p>
+            <div class="tags"><span class="tag">AOSP</span><span class="tag">LineageOS</span><span class="tag">Linux</span><span class="tag">Device tree</span></div>
+          </article>
+
+          <article class="project reveal" style="--project-color:#c77dff">
+            <span class="project-num">04 — OPEN SOURCE</span>
+            <a class="project-link" href="https://github.com/kamil5646/Recovery-PBRP-Spacewar" target="_blank" rel="noreferrer" aria-label="Otwórz projekt Recovery PBRP Spacewar">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <h3>PBRP Recovery — Spacewar</h3>
+            <p>Projekt custom recovery dla Nothing Phone (1), z dokumentacją device tree i obsługą języka polskiego oraz angielskiego.</p>
+            <div class="tags"><span class="tag">Android</span><span class="tag">Recovery</span><span class="tag">Shell</span><span class="tag">Open source</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-mnie">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="kicker">02 / Profil</p>
+            <h2>Kod spotyka praktykę.</h2>
+          </div>
+        </div>
+
+        <div class="stack-grid">
+          <div class="about-card reveal">
+            <div class="profile-row">
+              <img class="avatar" src="https://avatars.githubusercontent.com/u/143969553?v=4" alt="Avatar profilu Kamil na GitHubie" width="74" height="74">
+              <div><strong>Kamil</strong><span>Developer / builder</span></div>
+            </div>
+            <p>Najbardziej interesują mnie projekty, w których oprogramowanie rozwiązuje konkretny problem: oszczędza czas, upraszcza pracę albo daje użytkownikowi większą kontrolę.</p>
+            <p>Łączę rozwój aplikacji z doświadczeniem technicznym — dlatego dobrze czuję się w narzędziach CAD, automatyce, smart home i projektach systemowych.</p>
+          </div>
+
+          <div class="stack-card reveal">
+            <div class="skills">
+              <div class="skill"><strong>Mobile</strong><span>SwiftUI · Flutter · Android</span></div>
+              <div class="skill"><strong>Desktop</strong><span>Electron · macOS · Windows</span></div>
+              <div class="skill"><strong>Automation</strong><span>Home Assistant · API · GitHub Actions</span></div>
+              <div class="skill"><strong>System</strong><span>LineageOS · Linux · device trees</span></div>
+              <div class="skill"><strong>Web</strong><span>HTML · CSS · JavaScript</span></div>
+              <div class="skill"><strong>Workflow</strong><span>Git · CI/CD · release builds</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="contact reveal">
+          <p class="kicker">03 / Kontakt</p>
+          <h2>Chcesz zobaczyć, nad czym teraz pracuję?</h2>
+          <p>Wszystkie publiczne repozytoria, aktualizacje i wydania znajdziesz na moim profilu GitHub.</p>
+          <a class="btn primary" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">github.com/kamil5646</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year"></span> Kamil. Zbudowane bez frameworka.</span>
+    <a href="#top">Wróć na górę ↑</a>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const saved = localStorage.getItem("theme");
+    if (saved === "light") root.classList.add("light");
+
+    document.getElementById("theme").addEventListener("click", () => {
+      root.classList.toggle("light");
+      localStorage.setItem("theme", root.classList.contains("light") ? "light" : "dark");
+    });
+
+    const nav = document.getElementById("nav");
+    const updateNav = () => nav.classList.toggle("scrolled", scrollY > 12);
+    updateNav();
+    addEventListener("scroll", updateNav, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
