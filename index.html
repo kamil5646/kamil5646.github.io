@@ -5,106 +5,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-adsense-account" content="ca-pub-3602841906587206">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3602841906587206" crossorigin="anonymous"></script>
-  <meta name="description" content="Portfolio Kamila — aplikacje desktopowe i mobilne, narzędzia CAD, automatyka oraz projekty open source.">
-  <meta name="theme-color" content="#07110f">
-  <meta property="og:title" content="Kamil — Portfolio">
-  <meta property="og:description" content="Tworzę użyteczne aplikacje, narzędzia i projekty open source.">
+
+  <title>Kamil Kasprzak — Portfolio</title>
+  <meta name="description" content="Portfolio Kamila Kasprzaka. Aplikacje desktopowe i mobilne, narzędzia CAD oraz automatyzacja praktycznych procesów.">
+  <meta name="theme-color" content="#08110f">
+  <link rel="canonical" href="https://kamil5646.github.io/">
+
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://kamil5646.github.io/">
+  <meta property="og:title" content="Kamil Kasprzak — Portfolio">
+  <meta property="og:description" content="Aplikacje desktopowe i mobilne tworzone wokół prawdziwych potrzeb.">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/143969553?v=4">
-  <title>Kamil — Portfolio</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%2308110f%22/><path d=%22M18 14v36M46 14 27 32l19 18%22 fill=%22none%22 stroke=%22%2375f5b4%22 stroke-width=%227%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kamil Kasprzak",
+    "url": "https://kamil5646.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/143969553?v=4",
+    "sameAs": ["https://github.com/kamil5646"],
+    "knowsAbout": ["SwiftUI", "Flutter", "Electron", "JavaScript", "CAD", "GitHub Actions"]
+  }
+  </script>
+
   <style>
     :root {
-      --bg: #07110f;
-      --bg-soft: #0b1916;
-      --panel: rgba(15, 34, 29, .72);
-      --panel-solid: #0f221d;
-      --line: rgba(118, 255, 205, .14);
-      --text: #edfdf7;
-      --muted: #91a9a0;
-      --accent: #62f6bd;
-      --accent-2: #70a7ff;
-      --shadow: 0 28px 80px rgba(0, 0, 0, .34);
-      --radius: 24px;
+      --bg: #08110f;
+      --bg-2: #0c1815;
+      --surface: rgba(17, 34, 29, .78);
+      --surface-solid: #11221d;
+      --surface-2: #152b24;
+      --text: #f2fbf7;
+      --muted: #9bb0a8;
+      --line: rgba(165, 231, 205, .14);
+      --line-strong: rgba(165, 231, 205, .26);
+      --accent: #75f5b4;
+      --accent-blue: #80aaff;
+      --accent-warm: #ffc56e;
+      --shadow: 0 30px 90px rgba(0, 0, 0, .34);
+      --radius-lg: 28px;
+      --radius-md: 19px;
+      --header: rgba(8, 17, 15, .78);
       color-scheme: dark;
     }
 
     :root.light {
-      --bg: #f2f8f5;
-      --bg-soft: #e7f2ed;
-      --panel: rgba(255, 255, 255, .78);
-      --panel-solid: #fff;
-      --line: rgba(4, 72, 49, .13);
+      --bg: #f4f8f6;
+      --bg-2: #eaf2ee;
+      --surface: rgba(255, 255, 255, .82);
+      --surface-solid: #fff;
+      --surface-2: #edf5f1;
       --text: #10201a;
-      --muted: #5a7168;
-      --accent: #087f5b;
-      --accent-2: #2457c5;
-      --shadow: 0 28px 70px rgba(16, 65, 47, .12);
+      --muted: #5f746c;
+      --line: rgba(20, 77, 58, .13);
+      --line-strong: rgba(20, 77, 58, .23);
+      --accent: #0a8f62;
+      --accent-blue: #315fc5;
+      --accent-warm: #a85b00;
+      --shadow: 0 30px 80px rgba(31, 75, 59, .12);
+      --header: rgba(244, 248, 246, .82);
       color-scheme: light;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 94px; }
     body {
       margin: 0;
       min-width: 320px;
+      overflow-x: hidden;
       background:
-        radial-gradient(circle at 75% 5%, color-mix(in srgb, var(--accent-2) 15%, transparent), transparent 34rem),
-        radial-gradient(circle at 5% 35%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 30rem),
+        radial-gradient(circle at 82% 0%, color-mix(in srgb, var(--accent-blue) 13%, transparent), transparent 29rem),
+        radial-gradient(circle at 2% 28%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 27rem),
         var(--bg);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
-      opacity: .34;
+      opacity: .24;
       background-image:
         linear-gradient(var(--line) 1px, transparent 1px),
         linear-gradient(90deg, var(--line) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: linear-gradient(to bottom, black, transparent 80%);
-      z-index: -1;
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 76%);
     }
 
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
-    ::selection { background: var(--accent); color: #04100c; }
+    img, svg { display: block; }
+    ::selection { background: var(--accent); color: #06100c; }
 
-    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
 
-    .skip {
+    .skip-link {
       position: fixed;
-      left: 16px;
+      left: 18px;
       top: -80px;
       z-index: 100;
-      padding: 10px 14px;
-      background: var(--accent);
-      color: #04100c;
+      padding: 10px 15px;
       border-radius: 10px;
+      background: var(--accent);
+      color: #06100c;
       font-weight: 800;
     }
-    .skip:focus { top: 16px; }
+    .skip-link:focus { top: 18px; }
 
-    nav {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      border-bottom: 1px solid transparent;
+      transition: background .25s ease, border-color .25s ease;
+    }
+    .site-header.scrolled {
+      border-color: var(--line);
+      background: var(--header);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid transparent;
-      transition: .25s ease;
     }
-    nav.scrolled {
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      border-color: var(--line);
-    }
-    .nav-inner {
-      height: 72px;
+    .nav {
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -113,30 +144,33 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
+      gap: 12px;
       font-weight: 850;
-      letter-spacing: -.03em;
+      letter-spacing: -.035em;
     }
     .brand-mark {
-      width: 34px;
-      height: 34px;
+      width: 39px;
+      height: 39px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 11px;
-      background: var(--panel);
+      border: 1px solid var(--line-strong);
+      border-radius: 13px;
+      background: var(--surface);
       color: var(--accent);
-      box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 10%, transparent);
+      font: 800 .87rem ui-monospace, SFMono-Regular, Menlo, monospace;
+      box-shadow: inset 0 0 24px color-mix(in srgb, var(--accent) 8%, transparent);
     }
-    .nav-links { display: flex; align-items: center; gap: 26px; }
-    .nav-links a {
+    .nav-right { display: flex; align-items: center; gap: 8px; }
+    .nav-link {
+      padding: 10px 12px;
+      border-radius: 11px;
       color: var(--muted);
-      font-size: .93rem;
-      font-weight: 650;
-      transition: color .2s ease;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: color .2s ease, background .2s ease;
     }
-    .nav-links a:hover { color: var(--text); }
-    .theme-toggle {
+    .nav-link:hover { color: var(--text); background: var(--surface); }
+    .icon-button {
       width: 42px;
       height: 42px;
       display: grid;
@@ -144,235 +178,383 @@
       padding: 0;
       border: 1px solid var(--line);
       border-radius: 13px;
-      background: var(--panel);
+      background: var(--surface);
       color: var(--text);
       cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease;
     }
+    .icon-button:hover { transform: translateY(-2px); border-color: var(--line-strong); }
 
     .hero {
-      min-height: calc(100vh - 72px);
+      min-height: calc(100svh - 76px);
       display: grid;
-      grid-template-columns: 1.25fr .75fr;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
       align-items: center;
-      gap: 56px;
-      padding: 84px 0 96px;
+      gap: clamp(44px, 7vw, 90px);
+      padding: 80px 0 100px;
     }
-    .eyebrow {
+    .status {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-bottom: 24px;
+      margin-bottom: 25px;
       color: var(--accent);
-      font: 700 .82rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
-      letter-spacing: .08em;
+      font: 750 .78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .09em;
       text-transform: uppercase;
     }
-    .pulse {
+    .status-dot {
       width: 8px;
       height: 8px;
-      border-radius: 50%;
+      border-radius: 999px;
       background: var(--accent);
-      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent);
-      animation: pulse 2.2s infinite;
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
+      animation: signal 2.2s infinite;
     }
-    @keyframes pulse {
-      70% { box-shadow: 0 0 0 10px transparent; }
+    @keyframes signal {
+      75% { box-shadow: 0 0 0 10px transparent; }
       100% { box-shadow: 0 0 0 0 transparent; }
     }
     h1 {
-      max-width: 850px;
+      max-width: 790px;
       margin: 0;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: .96;
+      font-size: clamp(3.4rem, 7.6vw, 6.8rem);
+      line-height: .93;
       letter-spacing: -.075em;
     }
-    h1 span {
+    h1 .name { display: block; }
+    h1 .gradient {
+      display: block;
       color: transparent;
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
+      background: linear-gradient(110deg, var(--accent), var(--accent-blue));
       -webkit-background-clip: text;
       background-clip: text;
     }
-    .lead {
-      max-width: 700px;
-      margin: 30px 0 0;
+    .hero-copy {
+      max-width: 680px;
+      margin: 28px 0 0;
       color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 1.8vw, 1.22rem);
     }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-    .btn {
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 34px; }
+    .button {
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 50px;
       padding: 0 20px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--line-strong);
       border-radius: 15px;
-      background: var(--panel);
+      background: var(--surface);
       color: var(--text);
-      font-weight: 780;
+      font-weight: 800;
       transition: transform .2s ease, border-color .2s ease, background .2s ease;
     }
-    .btn:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
-    .btn.primary { background: var(--accent); color: #04100c; border-color: transparent; }
-    .btn svg { width: 19px; height: 19px; }
+    .button:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 52%, transparent); }
+    .button.primary { border-color: transparent; background: var(--accent); color: #06100c; }
+    .button svg { width: 18px; height: 18px; }
 
-    .terminal {
+    .workbench {
       position: relative;
+      min-height: 468px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, color-mix(in srgb, var(--surface-solid) 92%, transparent), var(--surface));
       box-shadow: var(--shadow);
       overflow: hidden;
-      transform: rotate(1.5deg);
+      isolation: isolate;
     }
-    .terminal::after {
+    .workbench::before {
       content: "";
       position: absolute;
       inset: 0;
-      pointer-events: none;
-      background: linear-gradient(110deg, transparent 30%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 70%);
+      z-index: -1;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(135deg, #000, transparent 80%);
     }
-    .terminal-bar {
-      height: 48px;
+    .workbench-top {
+      height: 52px;
       display: flex;
       align-items: center;
       gap: 7px;
-      padding: 0 17px;
+      padding: 0 18px;
       border-bottom: 1px solid var(--line);
     }
-    .dot { width: 10px; height: 10px; border-radius: 50%; background: #ff6b6b; }
-    .dot:nth-child(2) { background: #ffd43b; }
-    .dot:nth-child(3) { background: #51cf66; }
-    .terminal-title { margin-left: auto; color: var(--muted); font: 600 .72rem ui-monospace, monospace; }
-    pre {
-      min-height: 330px;
-      margin: 0;
-      padding: 30px 24px;
-      color: var(--muted);
-      font: 500 clamp(.78rem, 1.3vw, .92rem)/1.85 ui-monospace, SFMono-Regular, Menlo, monospace;
-      white-space: pre-wrap;
-    }
-    .code-key { color: var(--accent-2); }
-    .code-value { color: var(--accent); }
-    .code-comment { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+    .window-dot { width: 9px; height: 9px; border-radius: 50%; background: #ff6b6b; }
+    .window-dot:nth-child(2) { background: #ffd43b; }
+    .window-dot:nth-child(3) { background: #51cf66; }
+    .window-title { margin-left: auto; color: var(--muted); font: 650 .71rem ui-monospace, monospace; }
 
-    section { padding: 110px 0; }
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 42px;
+    .floating-app {
+      position: absolute;
+      border: 1px solid var(--line-strong);
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--surface-solid) 94%, transparent);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, .22);
     }
-    .kicker {
-      margin: 0 0 10px;
-      color: var(--accent);
-      font: 750 .79rem ui-monospace, monospace;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-    h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.04; letter-spacing: -.055em; }
-    .section-copy { max-width: 500px; margin: 0; color: var(--muted); }
-
-    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .project {
-      position: relative;
-      min-height: 320px;
-      display: flex;
-      flex-direction: column;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+    .cad-mini {
+      inset: 88px 34px auto 56px;
+      height: 245px;
       overflow: hidden;
-      transition: transform .25s ease, border-color .25s ease;
+      transform: rotate(-2deg);
     }
-    .project:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent) 42%, transparent); }
-    .project::before {
-      content: "";
-      position: absolute;
-      right: -60px;
-      top: -60px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: color-mix(in srgb, var(--project-color, var(--accent)) 13%, transparent);
-      filter: blur(8px);
+    .mini-toolbar {
+      height: 39px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 12px;
+      border-bottom: 1px solid var(--line);
     }
-    .project-num {
-      color: var(--muted);
-      font: 700 .77rem ui-monospace, monospace;
-      letter-spacing: .08em;
-    }
-    .project h3 { margin: 42px 0 12px; font-size: 1.75rem; letter-spacing: -.035em; }
-    .project p { max-width: 520px; margin: 0; color: var(--muted); }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 30px; }
-    .tag {
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: color-mix(in srgb, var(--bg) 38%, transparent);
-      font-size: .76rem;
-      font-weight: 700;
-    }
-    .project-link {
-      position: absolute;
-      right: 26px;
-      top: 24px;
-      width: 42px;
-      height: 42px;
+    .tool {
+      width: 22px;
+      height: 22px;
       display: grid;
       place-items: center;
       border: 1px solid var(--line);
-      border-radius: 13px;
-      color: var(--text);
-      transition: background .2s ease, color .2s ease;
+      border-radius: 6px;
+      color: var(--muted);
+      font: 700 .58rem ui-monospace, monospace;
     }
-    .project:hover .project-link { background: var(--accent); color: #04100c; }
-    .project-link svg { width: 18px; height: 18px; }
+    .tool.active { background: color-mix(in srgb, var(--accent-blue) 17%, transparent); color: var(--accent-blue); }
+    .cad-canvas {
+      position: relative;
+      height: calc(100% - 39px);
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    .cad-canvas svg { width: 100%; height: 100%; }
 
-    .stack-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
-    .about-card, .stack-card {
-      padding: 34px;
+    .calc-mini {
+      width: 228px;
+      right: 27px;
+      bottom: 30px;
+      padding: 17px;
+      transform: rotate(3deg);
+    }
+    .calc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
+    .calc-head strong { font-size: .78rem; }
+    .calc-score { color: var(--accent); font: 800 .72rem ui-monospace, monospace; }
+    .cut-row { display: flex; gap: 3px; height: 18px; margin-top: 7px; }
+    .cut { border-radius: 5px; background: var(--accent-blue); opacity: .9; }
+    .cut.green { background: var(--accent); }
+    .cut.warm { background: var(--accent-warm); }
+    .cut-rest { flex: 1; border: 1px dashed var(--line-strong); border-radius: 5px; }
+    .calc-foot { display: flex; justify-content: space-between; margin-top: 15px; color: var(--muted); font: 650 .63rem ui-monospace, monospace; }
+
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .platform {
+      padding: 7px 11px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--panel);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface) 80%, transparent);
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 720;
     }
-    .profile-row { display: flex; align-items: center; gap: 18px; margin-bottom: 28px; }
-    .avatar {
-      width: 74px;
-      height: 74px;
-      border: 2px solid color-mix(in srgb, var(--accent) 38%, transparent);
-      border-radius: 23px;
-      object-fit: cover;
+
+    section { padding: 112px 0; }
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 38px;
+      margin-bottom: 42px;
     }
-    .profile-row strong { display: block; font-size: 1.15rem; }
-    .profile-row span { color: var(--muted); font-size: .9rem; }
-    .about-card p { color: var(--muted); }
-    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .skill {
-      padding: 18px;
+    .overline {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font: 760 .78rem ui-monospace, monospace;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    h2 { margin: 0; font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1; letter-spacing: -.06em; }
+    .section-intro { max-width: 510px; margin: 0; color: var(--muted); }
+
+    .project-list { display: grid; gap: 24px; }
+    .project-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(390px, .9fr);
+      gap: clamp(35px, 6vw, 76px);
+      align-items: center;
+      min-height: 480px;
+      padding: clamp(28px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .12);
+      overflow: hidden;
+    }
+    .project-card::after {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      right: -120px;
+      top: -140px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--project-accent) 10%, transparent);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+    .project-card:nth-child(even) .project-content { order: 2; }
+    .project-card:nth-child(even) .project-preview { order: 1; }
+    .project-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--project-accent);
+      font: 760 .76rem ui-monospace, monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .project-label::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+    .project-card h3 { margin: 22px 0 15px; font-size: clamp(2.1rem, 4vw, 3.35rem); line-height: 1; letter-spacing: -.055em; }
+    .project-description { max-width: 590px; margin: 0; color: var(--muted); font-size: 1.03rem; }
+    .feature-list { display: grid; gap: 9px; margin: 25px 0 0; padding: 0; list-style: none; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: .9rem; }
+    .feature-list svg { width: 17px; height: 17px; flex: 0 0 auto; margin-top: 3px; color: var(--project-accent); }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 27px; }
+    .tech-pill {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--bg) 28%, transparent);
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 750;
+    }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+    .project-preview {
+      position: relative;
+      min-height: 350px;
+      border: 1px solid var(--line-strong);
+      border-radius: 22px;
+      background: var(--surface-solid);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .preview-bar {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .preview-bar .window-dot { width: 8px; height: 8px; }
+    .preview-name { margin-left: 8px; color: var(--muted); font: 650 .65rem ui-monospace, monospace; }
+
+    .cad-preview-body {
+      position: relative;
+      height: 306px;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .cad-preview-body svg { width: 100%; height: 100%; }
+
+    .calc-preview-body { padding: 25px; }
+    .input-line { display: grid; grid-template-columns: 1fr 88px; gap: 9px; }
+    .fake-input {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font: 650 .72rem ui-monospace, monospace;
+    }
+    .result-title { display: flex; align-items: end; justify-content: space-between; margin-top: 26px; }
+    .result-title strong { font-size: .85rem; }
+    .result-title span { color: var(--accent); font: 800 1.25rem ui-monospace, monospace; }
+    .bar-group { margin-top: 15px; }
+    .bar-meta { display: flex; justify-content: space-between; margin: 0 0 5px; color: var(--muted); font: 650 .64rem ui-monospace, monospace; }
+    .material-bar { height: 22px; display: flex; gap: 3px; }
+    .material-bar span { border-radius: 6px; background: var(--accent-blue); }
+    .material-bar span:nth-child(2n) { background: var(--accent); }
+    .material-bar i { flex: 1; border: 1px dashed var(--line-strong); border-radius: 6px; }
+    .pdf-row {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 22px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .pdf-badge { color: var(--accent-warm); font: 800 .67rem ui-monospace, monospace; }
+
+    .stack-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 24px; }
+    .profile-card, .skills-card {
+      padding: clamp(26px, 4vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+    }
+    .profile-top { display: flex; align-items: center; gap: 17px; margin-bottom: 27px; }
+    .avatar { width: 76px; height: 76px; border: 2px solid var(--line-strong); border-radius: 24px; object-fit: cover; }
+    .profile-top strong { display: block; font-size: 1.15rem; }
+    .profile-top span { color: var(--muted); font-size: .87rem; }
+    .profile-card p { margin: 0; color: var(--muted); }
+    .profile-card p + p { margin-top: 15px; }
+
+    .skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .skill-item {
+      padding: 19px;
       border: 1px solid var(--line);
       border-radius: 16px;
-      background: color-mix(in srgb, var(--bg) 35%, transparent);
+      background: color-mix(in srgb, var(--bg) 26%, transparent);
     }
-    .skill strong { display: block; margin-bottom: 4px; }
-    .skill span { color: var(--muted); font-size: .85rem; }
+    .skill-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 19px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      color: var(--accent);
+      font: 800 .7rem ui-monospace, monospace;
+    }
+    .skill-item strong { display: block; margin-bottom: 5px; }
+    .skill-item span { color: var(--muted); font-size: .82rem; }
 
-    .contact {
-      padding: 72px 32px;
-      text-align: center;
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 36px;
+      padding: clamp(34px, 6vw, 72px);
       border: 1px solid var(--line);
-      border-radius: calc(var(--radius) + 8px);
+      border-radius: 34px;
       background:
-        linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 45%),
-        var(--panel);
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 9%, transparent), transparent 52%),
+        var(--surface);
       box-shadow: var(--shadow);
     }
-    .contact h2 { max-width: 760px; margin: 0 auto; }
-    .contact p { max-width: 590px; margin: 20px auto 30px; color: var(--muted); }
+    .contact-card h2 { max-width: 720px; }
+    .contact-card p { max-width: 630px; margin: 18px 0 0; color: var(--muted); }
 
     footer {
       display: flex;
@@ -381,7 +563,7 @@
       gap: 20px;
       padding: 38px 0 48px;
       color: var(--muted);
-      font-size: .85rem;
+      font-size: .83rem;
     }
     footer a:hover { color: var(--text); }
 
@@ -392,26 +574,37 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 70px; }
-      .terminal { width: min(620px, 100%); transform: none; }
-      .projects, .stack-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: start; flex-direction: column; }
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
+      .workbench { width: min(650px, 100%); }
+      .project-card { grid-template-columns: 1fr; }
+      .project-card:nth-child(even) .project-content,
+      .project-card:nth-child(even) .project-preview { order: initial; }
+      .stack-layout { grid-template-columns: 1fr; }
+      .contact-card { grid-template-columns: 1fr; }
     }
-    @media (max-width: 650px) {
+
+    @media (max-width: 680px) {
       .wrap { width: min(100% - 28px, 1160px); }
-      .nav-links a { display: none; }
-      .nav-links { gap: 8px; }
-      .hero { padding: 58px 0 70px; gap: 44px; }
-      h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+      .nav { min-height: 68px; }
+      .nav-link { display: none; }
+      h1 { font-size: clamp(3.15rem, 16vw, 4.8rem); }
+      .hero { padding: 55px 0 76px; gap: 44px; }
+      .hero-actions .button { flex: 1 1 160px; }
+      .workbench { min-height: 405px; }
+      .cad-mini { inset: 75px 16px auto 25px; height: 220px; }
+      .calc-mini { right: 14px; bottom: 18px; width: 205px; }
       section { padding: 78px 0; }
-      .projects { grid-template-columns: 1fr; }
-      .project { min-height: 300px; padding: 25px; }
-      .skills { grid-template-columns: 1fr; }
-      .about-card, .stack-card { padding: 25px; }
-      .contact { padding: 58px 22px; }
+      .section-header { align-items: flex-start; flex-direction: column; margin-bottom: 30px; }
+      .project-card { min-height: 0; padding: 24px; gap: 30px; }
+      .project-preview { min-height: 285px; }
+      .cad-preview-body { height: 241px; }
+      .calc-preview-body { padding: 18px; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .contact-card { padding: 38px 24px; }
       footer { align-items: flex-start; flex-direction: column; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -420,133 +613,255 @@
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Przejdź do treści</a>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
 
-  <nav id="nav">
-    <div class="wrap nav-inner">
+  <header class="site-header" id="site-header">
+    <nav class="wrap nav" aria-label="Główna nawigacja">
       <a class="brand" href="#top" aria-label="Strona główna">
-        <span class="brand-mark">&lt;/&gt;</span>
-        <span>Kamil</span>
+        <span class="brand-mark">KK</span>
+        <span>Kamil Kasprzak</span>
       </a>
-      <div class="nav-links">
-        <a href="#projekty">Projekty</a>
-        <a href="#o-mnie">O mnie</a>
-        <a href="https://github.com/kamil5646" target="_blank" rel="noreferrer">GitHub</a>
-        <button class="theme-toggle" id="theme" aria-label="Zmień motyw" title="Zmień motyw">
-          <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2">
+
+      <div class="nav-right">
+        <a class="nav-link" href="#projekty">Projekty</a>
+        <a class="nav-link" href="#technologie">Technologie</a>
+        <a class="nav-link" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">GitHub</a>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Zmień motyw" title="Zmień motyw">
+          <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 3a9 9 0 1 0 9 9c0-.5 0-1-.1-1.5A7 7 0 0 1 12 3Z"/>
           </svg>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <main id="main">
-    <header class="wrap hero" id="top">
+    <section class="wrap hero" id="top">
       <div>
-        <div class="eyebrow"><span class="pulse"></span> Projekty technologiczne</div>
-        <h1>Buduję rzeczy, które <span>działają.</span></h1>
-        <p class="lead">
-          Tworzę aplikacje desktopowe i mobilne, narzędzia dla branży technicznej,
-          automatykę oraz projekty open source — od pomysłu po gotowy build.
+        <div class="status"><span class="status-dot"></span> Własne aplikacje i narzędzia</div>
+        <h1>
+          <span class="name">Kamil Kasprzak.</span>
+          <span class="gradient">Pomysł zamieniam w produkt.</span>
+        </h1>
+        <p class="hero-copy">
+          Projektuję i rozwijam aplikacje dla iOS, macOS, Windows oraz Androida.
+          Skupiam się na prostych narzędziach, które rozwiązują konkretne problemy
+          — szczególnie w pracy technicznej.
         </p>
-        <div class="actions">
-          <a class="btn primary" href="#projekty">
+
+        <div class="hero-actions">
+          <a class="button primary" href="#projekty">
             Zobacz projekty
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
           </a>
-          <a class="btn" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">
+          <a class="button" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">
             <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.7-4-1.4-4-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .7Z"/></svg>
-            GitHub
+            Mój GitHub
           </a>
         </div>
-      </div>
 
-      <div class="terminal" aria-label="Profil dewelopera">
-        <div class="terminal-bar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <span class="terminal-title">~/kamil/profile.ts</span>
+        <div class="platforms" aria-label="Obsługiwane platformy">
+          <span class="platform">iOS</span>
+          <span class="platform">macOS</span>
+          <span class="platform">Windows</span>
+          <span class="platform">Android</span>
         </div>
-        <pre><span class="code-key">const</span> kamil = {
-  name: <span class="code-value">"Kamil"</span>,
-  focus: [
-    <span class="code-value">"desktop & mobile"</span>,
-    <span class="code-value">"CAD & automation"</span>,
-    <span class="code-value">"Android & open source"</span>
-  ],
-  stack: [
-    <span class="code-value">"SwiftUI"</span>, <span class="code-value">"Flutter"</span>,
-    <span class="code-value">"Electron"</span>, <span class="code-value">"Python"</span>
-  ],
-  approach: <span class="code-value">"build → test → ship"</span>
-};
-
-<span class="code-comment">// pomysł zamieniam w działający produkt</span></pre>
       </div>
-    </header>
 
-    <section id="projekty">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <div>
-            <p class="kicker">01 / Wybrane realizacje</p>
-            <h2>Projekty</h2>
+      <div class="workbench" aria-label="Wizualizacja projektów MadCAD 2D i MadCalc">
+        <div class="workbench-top">
+          <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+          <span class="window-title">workspace / projects</span>
+        </div>
+
+        <div class="floating-app cad-mini" aria-hidden="true">
+          <div class="mini-toolbar">
+            <span class="tool active">L</span><span class="tool">R</span><span class="tool">D</span><span class="tool">M</span>
           </div>
-          <p class="section-copy">Narzędzia tworzone wokół prawdziwych potrzeb — od optymalizacji materiału po techniczne projektowanie 2D i rozwój Androida.</p>
+          <div class="cad-canvas">
+            <svg viewBox="0 0 500 250" fill="none">
+              <path d="M92 194V57h316v137M92 57l158 82L408 57M250 139v55" stroke="var(--accent-blue)" stroke-width="3"/>
+              <path d="M70 211h360M70 205v12M430 205v12M67 39h366M73 33v12M427 33v12" stroke="var(--muted)" stroke-width="1.5"/>
+              <text x="232" y="229" fill="var(--muted)" font-size="13" font-family="monospace">4200 mm</text>
+              <text x="227" y="29" fill="var(--muted)" font-size="13" font-family="monospace">brama</text>
+            </svg>
+          </div>
         </div>
 
-        <div class="projects">
-          <article class="project reveal" style="--project-color:#62f6bd">
-            <span class="project-num">01 — DESKTOP / CAD</span>
-            <a class="project-link" href="https://kamil5646.github.io/MadCAD2D/" target="_blank" rel="noreferrer" aria-label="Otwórz stronę MadCAD 2D">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
-            </a>
-            <h3>MadCAD 2D</h3>
-            <p>Aplikacja CAD do szybkiego projektowania konstrukcji stalowych. Rysowanie, wymiarowanie, warstwy oraz eksport do DXF, SVG i PDF.</p>
-            <div class="tags"><span class="tag">Electron</span><span class="tag">JavaScript</span><span class="tag">CAD</span><span class="tag">Windows / macOS</span></div>
-          </article>
-
-          <article class="project reveal" style="--project-color:#70a7ff">
-            <span class="project-num">02 — MOBILE / DESKTOP</span>
-            <a class="project-link" href="https://github.com/kamil5646/MadCalc" target="_blank" rel="noreferrer" aria-label="Otwórz repozytorium MadCalc">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
-            </a>
-            <h3>MadCalc</h3>
-            <p>Lokalny kalkulator optymalizacji cięcia sztang z raportami PDF. Natywna aplikacja iOS oraz wersja wieloplatformowa.</p>
-            <div class="tags"><span class="tag">SwiftUI</span><span class="tag">Flutter</span><span class="tag">iOS</span><span class="tag">Android / Desktop</span></div>
-          </article>
-
+        <div class="floating-app calc-mini" aria-hidden="true">
+          <div class="calc-head"><strong>Optymalizacja</strong><span class="calc-score">94,2%</span></div>
+          <div class="cut-row"><span class="cut green" style="width:38%"></span><span class="cut" style="width:31%"></span><span class="cut-rest"></span></div>
+          <div class="cut-row"><span class="cut warm" style="width:27%"></span><span class="cut green" style="width:42%"></span><span class="cut-rest"></span></div>
+          <div class="cut-row"><span class="cut" style="width:46%"></span><span class="cut warm" style="width:36%"></span><span class="cut-rest"></span></div>
+          <div class="calc-foot"><span>3 sztangi</span><span>PDF ✓</span></div>
         </div>
       </div>
     </section>
 
-    <section id="o-mnie">
+    <section id="projekty">
       <div class="wrap">
-        <div class="section-head reveal">
+        <div class="section-header reveal">
           <div>
-            <p class="kicker">02 / Profil</p>
-            <h2>Kod spotyka praktykę.</h2>
+            <p class="overline">Wybrane realizacje</p>
+            <h2>Dwa projekty.<br>Konkretny efekt.</h2>
+          </div>
+          <p class="section-intro">
+            Obie aplikacje powstały z praktycznej potrzeby. Są rozwijane jako kompletne produkty:
+            od interfejsu i logiki, przez buildy, aż po wydania na GitHubie.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card reveal" style="--project-accent:var(--accent-blue)">
+            <div class="project-content">
+              <span class="project-label">01 / CAD desktop</span>
+              <h3>MadCAD 2D</h3>
+              <p class="project-description">
+                Aplikacja do szybkiego projektowania elementów technicznych i konstrukcji stalowych.
+                Łączy klasyczne narzędzia CAD z gotowym workflow dla bram, ogrodzeń i balkonów.
+              </p>
+              <ul class="feature-list">
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Rysowanie, wymiarowanie, warstwy i edycja obiektów</li>
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Generatory konstrukcji oraz eksport DXF, SVG i PDF</li>
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Gotowe wydania dla macOS ARM64 i Windows x64</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-pill">Electron</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">Cloudflare Worker</span>
+                <span class="tech-pill">GitHub Actions</span>
+              </div>
+              <div class="project-actions">
+                <a class="button primary" href="https://kamil5646.github.io/MadCAD2D/" target="_blank" rel="noreferrer">Strona projektu</a>
+                <a class="button" href="https://github.com/kamil5646/MadCAD2D" target="_blank" rel="noreferrer">Repozytorium</a>
+              </div>
+            </div>
+
+            <div class="project-preview" aria-hidden="true">
+              <div class="preview-bar">
+                <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+                <span class="preview-name">MadCAD 2D / projekt bramy</span>
+              </div>
+              <div class="cad-preview-body">
+                <svg viewBox="0 0 620 390" fill="none">
+                  <path d="M116 300V86h388v214M116 86l194 128L504 86M310 214v86" stroke="var(--accent-blue)" stroke-width="4"/>
+                  <path d="M89 328h442M89 320v16M531 320v16M88 58h444M96 50v16M524 50v16" stroke="var(--muted)" stroke-width="2"/>
+                  <path d="M75 87v214M67 87h16M67 301h16" stroke="var(--muted)" stroke-width="2"/>
+                  <text x="278" y="352" fill="var(--muted)" font-size="16" font-family="monospace">4200 mm</text>
+                  <text x="22" y="205" fill="var(--muted)" font-size="16" font-family="monospace" transform="rotate(-90 22 205)">1800 mm</text>
+                  <circle cx="310" cy="214" r="6" fill="var(--accent)"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" style="--project-accent:var(--accent)">
+            <div class="project-content">
+              <span class="project-label">02 / Mobile i desktop</span>
+              <h3>MadCalc</h3>
+              <p class="project-description">
+                Lokalny kalkulator optymalizacji cięcia sztang. Wylicza plan rozkroju,
+                zużycie materiału i odpad, a gotowy wynik zapisuje w czytelnym raporcie PDF.
+              </p>
+              <ul class="feature-list">
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Obliczenia działające całkowicie lokalnie, bez backendu</li>
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Natywna aplikacja iOS oraz wersja wieloplatformowa</li>
+                <li><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Eksport PDF i automatyczne zapisywanie stanu</li>
+              </ul>
+              <div class="project-tech">
+                <span class="tech-pill">SwiftUI</span>
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">GitHub Actions</span>
+              </div>
+              <div class="project-actions">
+                <a class="button primary" href="https://github.com/kamil5646/MadCalc" target="_blank" rel="noreferrer">Zobacz repozytorium</a>
+              </div>
+            </div>
+
+            <div class="project-preview" aria-hidden="true">
+              <div class="preview-bar">
+                <span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span>
+                <span class="preview-name">MadCalc / wynik optymalizacji</span>
+              </div>
+              <div class="calc-preview-body">
+                <div class="input-line">
+                  <div class="fake-input">Sztanga bazowa: 6000 mm</div>
+                  <div class="fake-input">Piła: 3 mm</div>
+                </div>
+                <div class="result-title"><strong>Plan cięcia</strong><span>94,2%</span></div>
+
+                <div class="bar-group">
+                  <div class="bar-meta"><span>Sztanga 01</span><span>odpad 192 mm</span></div>
+                  <div class="material-bar"><span style="width:34%"></span><span style="width:28%"></span><span style="width:30%"></span><i></i></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-meta"><span>Sztanga 02</span><span>odpad 247 mm</span></div>
+                  <div class="material-bar"><span style="width:41%"></span><span style="width:22%"></span><span style="width:27%"></span><i></i></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-meta"><span>Sztanga 03</span><span>odpad 311 mm</span></div>
+                  <div class="material-bar"><span style="width:31%"></span><span style="width:36%"></span><span style="width:21%"></span><i></i></div>
+                </div>
+
+                <div class="pdf-row"><span>Raport z planem cięcia</span><span class="pdf-badge">ZAPISZ PDF</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="technologie">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <div>
+            <p class="overline">Technologie i podejście</p>
+            <h2>Od logiki po gotowy build.</h2>
           </div>
         </div>
 
-        <div class="stack-grid">
-          <div class="about-card reveal">
-            <div class="profile-row">
-              <img class="avatar" src="https://avatars.githubusercontent.com/u/143969553?v=4" alt="Avatar profilu Kamil na GitHubie" width="74" height="74">
-              <div><strong>Kamil</strong><span>Twórca projektów technologicznych</span></div>
+        <div class="stack-layout">
+          <div class="profile-card reveal">
+            <div class="profile-top">
+              <img class="avatar" src="https://avatars.githubusercontent.com/u/143969553?v=4" alt="Kamil Kasprzak — avatar z GitHuba" width="76" height="76">
+              <div>
+                <strong>Kamil Kasprzak</strong>
+                <span>Twórca aplikacji i narzędzi</span>
+              </div>
             </div>
-            <p>Najbardziej interesują mnie projekty, w których oprogramowanie rozwiązuje konkretny problem: oszczędza czas, upraszcza pracę albo daje użytkownikowi większą kontrolę.</p>
-            <p>Łączę rozwój aplikacji z doświadczeniem technicznym — dlatego dobrze czuję się w narzędziach CAD, automatyce, smart home i projektach systemowych.</p>
+            <p>
+              Najbardziej interesują mnie projekty, w których kod ma wyraźny cel:
+              skraca pracę, ogranicza błędy albo upraszcza złożony proces.
+            </p>
+            <p>
+              Dlatego rozwijam własne narzędzia od pierwszego prototypu,
+              przez interfejs i testy, aż po instalator i publiczne wydanie.
+            </p>
           </div>
 
-          <div class="stack-card reveal">
-            <div class="skills">
-              <div class="skill"><strong>Mobile</strong><span>SwiftUI · Flutter · Android</span></div>
-              <div class="skill"><strong>Desktop</strong><span>Electron · macOS · Windows</span></div>
-              <div class="skill"><strong>Automation</strong><span>Home Assistant · API · GitHub Actions</span></div>
-              <div class="skill"><strong>System</strong><span>LineageOS · Linux · device trees</span></div>
-              <div class="skill"><strong>Web</strong><span>HTML · CSS · JavaScript</span></div>
-              <div class="skill"><strong>Workflow</strong><span>Git · CI/CD · release builds</span></div>
+          <div class="skills-card reveal">
+            <div class="skill-grid">
+              <div class="skill-item">
+                <span class="skill-icon"></span>
+                <strong>Apple</strong>
+                <span>SwiftUI, Xcode, natywne aplikacje iOS</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-icon">FL</span>
+                <strong>Wiele platform</strong>
+                <span>Flutter i Dart dla Androida oraz desktopu</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-icon">JS</span>
+                <strong>Aplikacje desktopowe</strong>
+                <span>Electron, JavaScript i narzędzia CAD</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-icon">CI</span>
+                <strong>Wydawanie</strong>
+                <span>Git, GitHub Actions, automatyczne buildy i release</span>
+              </div>
             </div>
           </div>
         </div>
@@ -555,46 +870,65 @@
 
     <section>
       <div class="wrap">
-        <div class="contact reveal">
-          <p class="kicker">Kontakt</p>
-          <h2>Chcesz zobaczyć, nad czym teraz pracuję?</h2>
-          <p>Wszystkie publiczne repozytoria, aktualizacje i wydania znajdziesz na moim profilu GitHub.</p>
-          <a class="btn primary" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">github.com/kamil5646</a>
+        <div class="contact-card reveal">
+          <div>
+            <p class="overline">Więcej na GitHubie</p>
+            <h2>Zobacz kod, wydania i dalszy rozwój projektów.</h2>
+            <p>Repozytoria zawierają dokumentację, historię zmian oraz gotowe buildy tam, gdzie są dostępne.</p>
+          </div>
+          <a class="button primary" href="https://github.com/kamil5646" target="_blank" rel="noreferrer">
+            Otwórz profil GitHub
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="wrap">
-    <span>© <span id="year"></span> Kamil. Zbudowane bez frameworka.</span>
+    <span>© <span id="year"></span> Kamil Kasprzak</span>
     <a href="#top">Wróć na górę ↑</a>
   </footer>
 
   <script>
-    const root = document.documentElement;
-    const saved = localStorage.getItem("theme");
-    if (saved === "light") root.classList.add("light");
+    var root = document.documentElement;
+    var savedTheme = localStorage.getItem("theme");
 
-    document.getElementById("theme").addEventListener("click", () => {
+    if (savedTheme === "light") {
+      root.classList.add("light");
+    }
+
+    document.getElementById("theme-toggle").addEventListener("click", function () {
       root.classList.toggle("light");
       localStorage.setItem("theme", root.classList.contains("light") ? "light" : "dark");
     });
 
-    const nav = document.getElementById("nav");
-    const updateNav = () => nav.classList.toggle("scrolled", scrollY > 12);
-    updateNav();
-    addEventListener("scroll", updateNav, { passive: true });
+    var header = document.getElementById("site-header");
+    function updateHeader() {
+      header.classList.toggle("scrolled", window.scrollY > 12);
+    }
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".reveal").forEach(function (element) {
+        observer.observe(element);
       });
-    }, { threshold: .12 });
+    } else {
+      document.querySelectorAll(".reveal").forEach(function (element) {
+        element.classList.add("visible");
+      });
+    }
 
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
